@@ -17,10 +17,10 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/Securibox/parsextract-net</RepositoryUrl>
     <Description>A C# client library for the Securibox ParseXtract API (https://www.securibox.eu/en/px)</Description>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Copyright>Securibox ©  2020</Copyright>
     <PackageIcon>px-icon.png</PackageIcon>
-    <PackageProjectUrl>https://www.securibox.eu/sca</PackageProjectUrl>
+    <PackageProjectUrl>https://www.securibox.eu/en/px/index.html</PackageProjectUrl>
     <PackageTags>Securibox ParseXtract;ParseXtract;PX</PackageTags>
     <PackageReleaseNotes />
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -32,8 +32,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
     <None Include="..\..\px-icon.png" Pack="true" PackagePath="\" />
     <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
   </ItemGroup>
