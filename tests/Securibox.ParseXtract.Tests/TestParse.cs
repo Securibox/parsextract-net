@@ -12,13 +12,13 @@ namespace Securibox.ParseXtract.Tests
 
         public TestParse()
         {
-            _client = new Client("[ClientId]", "[ClientSecret]");
+            _client = new Client("client_id", "client_secret");
         }
 
         [Test]
         public async Task Test1()
         {
-            var document = LoadDocument(@"C:\Path\To\File.pdf");
+            var document = LoadDocument(@"C:\path\to\file.pdf");
             var xdata = await _client.ParseAsync(document);
             Assert.Pass();
         }

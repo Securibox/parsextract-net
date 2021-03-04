@@ -34,9 +34,11 @@ namespace Securibox.ParseXtract
                 throw new ArgumentNullException("clientSecret");
             }
 
-            _serializerSettings = new JsonSerializerSettings();
-            _serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            _serializerSettings.DefaultValueHandling = DefaultValueHandling.Ignore;
+            _serializerSettings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                DefaultValueHandling = DefaultValueHandling.Ignore,
+            };
 
             HmacDelegatingHandler authorizationDelegateHandler = new HmacDelegatingHandler(clientId, clientSecret);
             if (logger != null)
@@ -51,11 +53,11 @@ namespace Securibox.ParseXtract
             {
                 authorizationDelegateHandler.InnerHandler = new HttpClientHandler();
             }
-            _httpClient = new HttpClient(authorizationDelegateHandler);
-            _httpClient.Timeout = new TimeSpan(0, 5, 0);
-
-
-            _httpClient.BaseAddress = new Uri("https://px-studio-parse.azurewebsites.net");
+            _httpClient = new HttpClient(authorizationDelegateHandler)
+            {
+                Timeout = new TimeSpan(0, 5, 0),
+                BaseAddress = new Uri("https://px-api.securibox.eu")
+            };
         }
 
         /// <summary>
